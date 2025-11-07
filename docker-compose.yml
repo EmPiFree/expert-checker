@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  expert-checker:
+    build: .
+    container_name: expert-checker
+    ports:
+      - "8085:8501"   # Host 8085 -> container 8501
+    restart: unless-stopped
+    volumes:
+      - ./expert_branches.json:/app/expert_branches.json:ro    # Optional: lege die Datei ins Verzeichnis
